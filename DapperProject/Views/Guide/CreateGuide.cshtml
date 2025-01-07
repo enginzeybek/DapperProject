@@ -1,0 +1,26 @@
+﻿@model CreateGuideDto
+@{
+    ViewData["Title"] = "CreateGuide";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+        <div class="col-12">
+            <div class="grid">
+                <form method="post">
+                    <div class="grid-item">
+                        <label for="guideName">TUR ŞEHRİ</label>
+                        <input id="guideName" asp-for="guideName" type="text" />
+                    </div>
+                    <br />
+                    <hr />
+                    <div class="card-action">
+                        <button type="submit" class="btn btn-danger">EKLE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

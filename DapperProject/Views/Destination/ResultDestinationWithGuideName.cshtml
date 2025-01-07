@@ -1,0 +1,37 @@
+﻿@model List<ResultDestinationWithGuideName>
+@{
+    ViewData["Title"] = "ResultDestinationWithGuideName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <span>TUR TABLOSU VE REHBER İSİMLERİ</span>
+            </div>
+            <div class="card-body bg-gradient">
+                <table class="table border-5 border-dark p-1 m-1 table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tur Şehri</th>
+                            <th>Rehber İSMİ</th>
+                        </tr>
+                        @if (Model != null)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.destinationId</td>
+                                    <td>@item.destinationCity</td>
+                                    <td>@item.guideName</td>
+                                </tr>
+                            }
+                        }
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

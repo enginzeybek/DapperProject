@@ -1,0 +1,28 @@
+﻿@model UpdateGuideDto
+@{
+    ViewData["Title"] = "UpdateGuide";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content m-auto">
+    <div class="container">
+        <div class="col-12">
+            <div class="grid">
+                <form method="post">
+                    <input type="hidden" asp-for="guideId" />
+                    <div class="grid-item">
+                        <label for="guideName">REHBER İSMİ</label>
+                        <input id="guideName" asp-for="guideName" type="text" />
+                    </div>
+                    <br />
+                    <hr />
+                    <div class="card-action">
+                        <button type="submit" class="btn btn-danger">GÜNCELLE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

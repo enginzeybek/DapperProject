@@ -1,0 +1,45 @@
+﻿@model List<ResultDestinationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+                <div class="card-header">
+                    <span>TUR TABLOSU</span>
+                </div>
+                <div class="card-body bg-gradient">
+                    <table class="table border-5 border-dark p-1 m-1 table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tur Şehri</th>
+                                <th>Rehber ID</th>
+                                <th>GÜNCELLE</th>
+                                <th>SİL</th>
+                            </tr>
+                            @if(Model != null)
+                            {
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.destinationId</td>
+                                        <td>@item.destinationCity</td>
+                                        <td>@item.guideId</td>
+                                        <td><a class="btn btn-info border-5" href="/Destination/UpdateDestination/@item.destinationId/">GÜNCELLE</a></td>
+                                        <td><a class="btn btn-danger border-5" href="/Destination/DeleteDestination/@item.destinationId/">SİL</a></td>
+                                    </tr>
+                                }
+                            }
+                        </thead>
+                    </table>
+                </div>
+                <div>
+                    <a href="/Destination/CreateDestination/" class="btn btn-success">EKLE</a>
+                </div>
+        </div>
+    </div>
+</div>
+
